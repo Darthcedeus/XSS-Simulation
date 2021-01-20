@@ -1,0 +1,17 @@
+{
+    "html_types":[
+        {
+            "id": "0",
+            "html": "<html> <head> {inject_csp} <title>Test Controler</title> </head> <body> <div> <h2> Search Term: {inject_xss} </h2> </div> {inject_return_func} </body></html>",
+            "description": ""
+        },{
+            "id": "1",
+            "html": "<html> <head> {inject_csp} <title>Test Controler</title> </head> <body> <div> <input size=40 name=\"request\" value=\"{inject_xss}\"> </div> {inject_return_func} </body> </html>",
+            "description": "Inject in value parameter, using double qoutes"
+        },{
+            "id": "2",
+            "html": "<html> <head> {inject_csp} <title>Test Controler</title> </head> <body> <div> <input size=40 name='request' value='{inject_xss}'> </div> {inject_return_func} </body> </html>",
+            "description": "Inject in value parameter, using single qoutes"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+	"filters": [{
+		"id": "0",
+        "csp": "",
+        "description": "no csp"
+	}, {
+		"id": "1",
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\">",
+        "description":"use of unsafe-inline"
+	}, {
+		"id": "2",
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-eval' data: http://*; child-src 'none'; report-uri /Report-parsing-url;\">",
+        "description":"use of unsafe-eval"
+	}, {
+		"id": "3",
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src 'self' https://facebook.com https://google.com https: data *; child-src 'none'; report-uri /Report-parsing-url;\">",
+        "description":"use of wildcard"
+	}, {
+		"id": "4",
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src 'self' report-uri /Report-parsing-url;\">",
+        "description":"missing object-src and default-src"
+	}]
+}

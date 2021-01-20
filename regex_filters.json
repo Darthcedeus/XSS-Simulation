@@ -1,0 +1,108 @@
+{
+	"filters": [{
+		"description": "no filter",
+		"id": "0",
+		"regex": "",
+		"ignore_case": "False",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script> is removed",
+		"id": "1",
+		"regex": "<script>",
+		"ignore_case": "False",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script> is removed, case sensitivity is ignored",
+		"id": "2",
+		"regex": "<script>",
+		"ignore_case": "True",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	},	{
+		"description": "<script src> is removed",
+		"id": "3",
+		"regex": "(<script)(.*)(>)",
+		"ignore_case": "False",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script src> is removed, case sensitivity is ignored",
+		"id": "4",
+		"regex": "(<script)(.*)(>)",
+		"ignore_case": "True",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script> and <img />  are removed",
+		"id": "5",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)",
+		"ignore_case": "False",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script> and <img />  are removed, case sensitivity is ignored",
+		"id": "6",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)",
+		"ignore_case": "True",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script>, <img /> and <img >  are removed",
+		"id": "7",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)|(<img)(.*)(>)",
+		"ignore_case": "False",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script>, <img /> and <img >  are removed, case sensitivity is ignored",
+		"id": "8",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)|(<img)(.*)(>)",
+		"ignore_case": "True",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script>, <img />, <img >, onload are removed",
+		"id": "9",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)|(<img)(.*)(>)|(onload)",
+		"ignore_case": "False",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script>, <img />, <img >,  onload are removed, case sensitibity is ignored",
+		"id": "10",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)|(<img)(.*)(>)|(onload)",
+		"ignore_case": "True",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script>, <img />, <img >,  onload, javascript: are removed",
+		"id": "11",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)|(<img)(.*)(>)|(onload)|(javascript:)",
+		"ignore_case": "False",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script>, <img />, <img >,  onload, javascript: are removed, case sensitivity is ignored",
+		"id": "12",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)|(<img)(.*)(>)|(onload)|(javascript:)",
+		"ignore_case": "True",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script>, <img />, <img >, javascript: are removed",
+		"id": "13",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)|(<img)(.*)(>)|(javascript:)",
+		"ignore_case": "False",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}, {
+		"description": "<script>, <img />, <img >, javascript: are removed, case sensitibvity is ignored",
+		"id": "14",
+		"regex": "(<script)(.*)(>)|(<img)(.*)(/>)|(<img)(.*)(>)|(javascript:)",
+		"ignore_case": "True",
+		"url_encoding": "False",
+		"html_encoding": "False"
+	}]
+}
