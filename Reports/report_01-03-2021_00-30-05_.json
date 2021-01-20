@@ -1,0 +1,80 @@
+[
+    {
+        "id": 0,
+        "inputString": " \"/><script>document.title=\"XSS-Success\"</script> ",
+        "regex_id": 1,
+        "regex": "<script>",
+        "regex_desc": "<script> is removed",
+        "csp_id": 1,
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\">",
+        "testResult": false,
+        "html_id": 1,
+        "html_input": "<html> <head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=40 name=\"request\" value=\" \"/><script>document.title=\"XSS-Success\"</script> \"> </div>  <script> function getTitle() { return document.title; } </script>  </body> </html>",
+        "html_output": "<html><head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=\"40\" name=\"request\" value=\" \">***anti-hacker***document.title=\"XSS-Success\" \"&gt; </div>  <script> function getTitle() { return document.title; } </script>   </body></html>"
+    },
+    {
+        "id": 1,
+        "inputString": " '/><script>document.title=\"XSS-Success\"</script> ",
+        "regex_id": 1,
+        "regex": "<script>",
+        "regex_desc": "<script> is removed",
+        "csp_id": 1,
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\">",
+        "testResult": false,
+        "html_id": 1,
+        "html_input": "<html> <head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=40 name=\"request\" value=\" '/><script>document.title=\"XSS-Success\"</script> \"> </div>  <script> function getTitle() { return document.title; } </script>  </body> </html>",
+        "html_output": "<html><head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=\"40\" name=\"request\" value=\" '/>***anti-hacker***document.title=\" xss-success\"<=\"\" script=\"\"> \"&gt; </div>  <script> function getTitle() { return document.title; } </script>   </body></html>"
+    },
+    {
+        "id": 2,
+        "inputString": " \"/><SCRIPT>document.title=\"XSS-Success\"</SCRIPT> ",
+        "regex_id": 1,
+        "regex": "<script>",
+        "regex_desc": "<script> is removed",
+        "csp_id": 1,
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\">",
+        "testResult": true,
+        "html_id": 1,
+        "html_input": "<html> <head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=40 name=\"request\" value=\" \"/><SCRIPT>document.title=\"XSS-Success\"</SCRIPT> \"> </div>  <script> function getTitle() { return document.title; } </script>  </body> </html>",
+        "html_output": "<html><head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>XSS-Success</title> </head> <body> <div> <input size=\"40\" name=\"request\" value=\" \"><script>document.title=\"XSS-Success\"</script> \"&gt; </div>  <script> function getTitle() { return document.title; } </script>   </body></html>"
+    },
+    {
+        "id": 3,
+        "inputString": " \"/><SCRIPT>document.title=\"XSS-Success\"</SCRIPT> ",
+        "regex_id": 1,
+        "regex": "<script>",
+        "regex_desc": "<script> is removed",
+        "csp_id": 1,
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\">",
+        "testResult": false,
+        "html_id": 2,
+        "html_input": "<html> <head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=40 name='request' value=' \"/><SCRIPT>document.title=\"XSS-Success\"</SCRIPT> '> </div>  <script> function getTitle() { return document.title; } </script>  </body> </html>",
+        "html_output": "<html><head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=\"40\" name=\"request\" value=\" &quot;/><SCRIPT>document.title=&quot;XSS-Success&quot;</SCRIPT> \"> </div>  <script> function getTitle() { return document.title; } </script>   </body></html>"
+    },
+    {
+        "id": 4,
+        "inputString": " '/><script>document.title=\"XSS-Success\"</script> ",
+        "regex_id": 1,
+        "regex": "<script>",
+        "regex_desc": "<script> is removed",
+        "csp_id": 1,
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\">",
+        "testResult": false,
+        "html_id": 2,
+        "html_input": "<html> <head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=40 name='request' value=' '/><script>document.title=\"XSS-Success\"</script> '> </div>  <script> function getTitle() { return document.title; } </script>  </body> </html>",
+        "html_output": "<html><head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=\"40\" name=\"request\" value=\" \">***anti-hacker***document.title=\"XSS-Success\" '&gt; </div>  <script> function getTitle() { return document.title; } </script>   </body></html>"
+    },
+    {
+        "id": 5,
+        "inputString": " '/><SCRIPT>document.title=\"XSS-Success\"</SCRIPT> ",
+        "regex_id": 1,
+        "regex": "<script>",
+        "regex_desc": "<script> is removed",
+        "csp_id": 1,
+        "csp": "<meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\">",
+        "testResult": true,
+        "html_id": 2,
+        "html_input": "<html> <head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>Test Controler</title> </head> <body> <div> <input size=40 name='request' value=' '/><SCRIPT>document.title=\"XSS-Success\"</SCRIPT> '> </div>  <script> function getTitle() { return document.title; } </script>  </body> </html>",
+        "html_output": "<html><head> <meta http-equiv=\"Content-Security-Policy\" content=\"script-src https://facebook.com https://google.com 'unsafe-inline' https://*; child-src 'none'; report-uri /Report-parsing-url;\"> <title>XSS-Success</title> </head> <body> <div> <input size=\"40\" name=\"request\" value=\" \"><script>document.title=\"XSS-Success\"</script> '&gt; </div>  <script> function getTitle() { return document.title; } </script>   </body></html>"
+    }
+]
